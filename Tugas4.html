@@ -363,7 +363,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-05e986d6-6c06-46c8-b526-824f0c01064d">
+  <div id="df-d20560c4-2d5a-43e0-b27d-6db565dccad7">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -440,7 +440,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-05e986d6-6c06-46c8-b526-824f0c01064d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d20560c4-2d5a-43e0-b27d-6db565dccad7')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -491,12 +491,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-05e986d6-6c06-46c8-b526-824f0c01064d button.colab-df-convert');
+          document.querySelector('#df-d20560c4-2d5a-43e0-b27d-6db565dccad7 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-05e986d6-6c06-46c8-b526-824f0c01064d');
+          const element = document.querySelector('#df-d20560c4-2d5a-43e0-b27d-6db565dccad7');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -536,7 +536,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -594,6 +594,37 @@ accuracy_Naive Bayes: 1.000
 precision_Naive Bayes: 1.000
 recall_Naive Bayes: 1.000
 f1-score_Naive Bayes : 1.000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/AmandaCaecilia/datamining/main/Iris.csv&#39;</span>
+<span class="n">colnames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sepal-length&#39;</span><span class="p">,</span><span class="s1">&#39;sepal-width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal-length&#39;</span><span class="p">,</span><span class="s1">&#39;petal-width&#39;</span><span class="p">]</span>
+<span class="n">irisdata</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">colnames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">irisdata</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span><span class="o">=</span><span class="n">irisdata</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">IndexError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">23617604</span><span class="n">a2f6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span><span class="o">=</span><span class="n">irisdata</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y</span><span class="o">=</span><span class="n">irisdata</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: index 4 is out of bounds for axis 1 with size 4
 </pre></div>
 </div>
 </div>
